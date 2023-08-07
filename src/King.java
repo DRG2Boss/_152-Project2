@@ -1,7 +1,10 @@
+// Define specifics for King as subclass of Piece.
+
 import javax.swing.*;
 
 public class King extends Piece {
     public King(boolean b) {
+        // Assign "piece" variables and choose image based on pieceType and color.
         pieceType = "King";
         isWhite = b;
 
@@ -11,5 +14,12 @@ public class King extends Piece {
         else {
             chessPiece = new ImageIcon("bking.gif");
         }
+    }
+
+    // Limit movements to what Kings are able to do using carMove function from Piece.
+        // Can move one space in any direction.
+    public boolean canMove(int startX, int startY, int endX, int endY) {
+        return (endX == startX - 1 || endX == startX || endX == startX + 1) &&
+                (endY == startY - 1 || endY == startY || endY == startY + 1);
     }
 }

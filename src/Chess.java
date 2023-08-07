@@ -5,12 +5,14 @@
 import javax.swing.*;
 
 public class Chess {
-    // Dimensions of full board and each tile.
+    // Dimension of full board and each tile.
     public static final int BOARD_SIZE = 352, TILE_SIZE = BOARD_SIZE / 8;
-    // Define board variable here.
+
+    // Initialize needed variables from other classes.
+    public static Player player = new Player();
     public static boardComponent board;
-    // Create array for every position on board, and define container size.
     public static Piece[][] position = new Piece[8][8];
+
     public static void main(String[] args) {
         // Draw pieces in appropriate starting positions.
         // Black Rooks
