@@ -2,7 +2,9 @@ import javax.swing.*;
 
 public class Queen extends Piece {
     public Queen(boolean b) {
+        pieceType = "Queen";
         isWhite = b;
+
         if(isWhite) {
             chessPiece = new ImageIcon("wqueen.gif");
         }

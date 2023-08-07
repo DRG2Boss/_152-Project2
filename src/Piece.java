@@ -3,11 +3,12 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class Piece {
-    public static ImageIcon chessPiece;
+public abstract class Piece {
+    public ImageIcon chessPiece;
     public boolean isWhite;
+    public String pieceType;
 
-    public static void drawPiece(int x, int y, Graphics g) {
+    public void drawPiece(int x, int y, Graphics g) {
         g.drawImage(chessPiece.getImage(), x, y, null);
     }
 }

@@ -21,7 +21,7 @@ public class boardComponent extends JComponent {
                 }
                 // If the position within the array is NOT null, run method drawPiece within the Piece class.
                 if(Chess.position[x][y] != null) {
-                    Piece.drawPiece(x * 44, y * 44, g);
+                    Chess.position[x][y].drawPiece(x * 44, y * 44, g);
                 }
             }
         }

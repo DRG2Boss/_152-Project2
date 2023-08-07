@@ -48,7 +48,7 @@ public class Chess {
         // Basic window setup.
         JFrame myWindow = new JFrame("Chess");
         myWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        myWindow.setSize(BOARD_SIZE, BOARD_SIZE);
+        myWindow.setSize(BOARD_SIZE+16, BOARD_SIZE+39);
 
         // Create a graphical object that will represent the board using earlier defined variable.
         board = new boardComponent();

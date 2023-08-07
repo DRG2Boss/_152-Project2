@@ -17,10 +17,16 @@ public class boardMouseListener implements MouseListener {
         int possibleStartX = e.getX()/44;
         int possibleStartY = e.getY()/44;
 
+        if(possibleStartX > 7 || possibleStartY > 7) {
+            System.out.println("Invalid move - cannot move outside of the board.");
+            return;
+        }
+
         // If the tile selected contains a piece, track that tile using variables startX and startY.
         if(Chess.position[possibleStartX][possibleStartY] != null) {
             startX = possibleStartX;
             startY = possibleStartY;
+            System.out.println("Start: "+startX+" , "+startY);
         }
     }
     public void mouseReleased(MouseEvent e) {
@@ -28,11 +34,17 @@ public class boardMouseListener implements MouseListener {
         int possibleEndX = e.getX()/44;
         int possibleEndY = e.getY()/44;
 
+        if((possibleEndX > 7 || possibleEndY > 7) || (startX == possibleEndX && startY == possibleEndY)){
+            System.out.println("Invalid move - selection not allowed.");
+            return;
+        }
+
         // If the tile selected does NOT contain a piece
         if(Chess.position[possibleEndX][possibleEndY] == null) {
             // Track this tile using endX and endY.
             endX = possibleEndX;
             endY = possibleEndY;
+            System.out.println("End: "+endX+ " , "+endY);
 
             // Reassign that pieces starting tile to the one we released the mouse over.
             Chess.position[endX][endY] = Chess.position[startX][startY];
