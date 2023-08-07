@@ -1,4 +1,4 @@
-// This defines the variables used for the computer player defined in boardMouseListener
+// This defines the variables used by the computer player setup within boardMouseListener.
 public class Player {
     public int playerNumberOfMoves = 0;
 
