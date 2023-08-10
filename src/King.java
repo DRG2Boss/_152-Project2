@@ -19,7 +19,7 @@ public class King extends Piece {
     // Limit movements to what Kings are able to do using carMove function from Piece.
         // Can move one space in any direction.
     public boolean canMove(int startX, int startY, int endX, int endY) {
-        return (endX == startX - 1 || endX == startX || endX == startX + 1) &&
-                (endY == startY - 1 || endY == startY || endY == startY + 1);
+        return (Math.abs(endX - startX) == 1 || endX == startX) &&
+                (Math.abs(endY - startY) == 1 || endY == startY);
     }
 }

@@ -17,6 +17,7 @@ public class boardMouseListener implements MouseListener {
         int possibleStartX = e.getX()/44;
         int possibleStartY = e.getY()/44;
 
+        // Two if statements to let user know they cannot select outside the board / an empty tile.
         if ((possibleStartX < 0 || possibleStartX > 7 || possibleStartY < 0) || possibleStartY > 7) {
             System.out.println("Invalid move - cannot select something outside of the board.");
             return;
@@ -99,7 +100,7 @@ public class boardMouseListener implements MouseListener {
             }
             // Otherwise if the space piece is moving to is available: do the movement, call repaint, and break from the while loop.
             if (Chess.position[Chess.player.possibleEndX][Chess.player.possibleEndY] == null) {
-                // Add one to numberOfMoves++ rack all coordinates and add one to numberOfMoves++
+                // Store all coordinates and add one to numberOfMoves++
                 Chess.player.playerNumberOfMoves++;
                 startX = Chess.player.possibleStartX;
                 startY = Chess.player.possibleStartY;
