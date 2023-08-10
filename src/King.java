@@ -3,10 +3,10 @@
 import javax.swing.*;
 
 public class King extends Piece {
-    public King(boolean b) {
+    public King(boolean bIsWhite) {
         // Assign "piece" variables and choose image based on pieceType and color.
         pieceType = "King";
-        isWhite = b;
+        isWhite = bIsWhite;
 
         if(isWhite) {
             chessPiece = new ImageIcon("wking.gif");

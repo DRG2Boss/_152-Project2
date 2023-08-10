@@ -3,10 +3,10 @@
 import javax.swing.*;
 
 public class Pawn extends Piece {
-    public Pawn(boolean b) {
+    public Pawn(boolean bIsWhite) {
         // Assign "piece" variables and choose image based on pieceType and color.
         pieceType = "Pawn";
-        isWhite = b;
+        isWhite = bIsWhite;
 
         if(isWhite) {
             chessPiece = new ImageIcon("wpawn.gif");

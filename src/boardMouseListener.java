@@ -18,17 +18,16 @@ public class boardMouseListener implements MouseListener {
         int possibleStartY = e.getY()/44;
 
         // Two if statements to let user know they cannot select outside the board / an empty tile.
-        if ((possibleStartX < 0 || possibleStartX > 7 || possibleStartY < 0) || possibleStartY > 7) {
+        if (possibleStartX < 0 || possibleStartX > 7 || possibleStartY < 0 || possibleStartY > 7) {
             System.out.println("Invalid move - cannot select something outside of the board.");
             return;
         }
         if (Chess.position[possibleStartX][possibleStartY] == null) {
             System.out.println("Invalid move - cannot select an empty tile.");
-            return;
         }
 
         // If the tile selected contains a piece, track that tile using variables startX and startY.
-        if (Chess.position[possibleStartX][possibleStartY] != null) {
+        else {
             startX = possibleStartX;
             startY = possibleStartY;
             System.out.println("Start: "+startX+","+startY);
